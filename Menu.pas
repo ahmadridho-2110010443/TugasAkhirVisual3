@@ -21,6 +21,7 @@ type
     procedure Kembali1Click(Sender: TObject);
     procedure FormAnggota1Click(Sender: TObject);
     procedure FormPegawai1Click(Sender: TObject);
+    procedure FormPeminjaman1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,7 +34,7 @@ var
 implementation
 
 uses
-  Login, Anggota, Pegawai;
+  Login, Anggota, Pegawai, Peminjaman;
 
 {$R *.dfm}
 
@@ -50,6 +51,11 @@ end;
 procedure TFormMenu.FormPegawai1Click(Sender: TObject);
 begin
 FormPegawai.ShowModal;
+end;
+
+procedure TFormMenu.FormPeminjaman1Click(Sender: TObject);
+begin
+FormPeminjaman.ShowModal;
 end;
 
 end.

@@ -7956,6 +7956,7 @@ object FormMenu: TFormMenu
       end
       object FormPeminjaman1: TMenuItem
         Caption = 'FormPeminjaman'
+        OnClick = FormPeminjaman1Click
       end
       object FormPengembalian1: TMenuItem
         Caption = 'FormPengembalian'

@@ -1,6 +1,6 @@
 object FormPegawai: TFormPegawai
-  Left = 333
-  Top = 152
+  Left = 379
+  Top = 150
   Width = 562
   Height = 450
   Caption = 'Form Pegawai'
