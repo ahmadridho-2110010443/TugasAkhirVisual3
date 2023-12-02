@@ -20,6 +20,7 @@ type
     Kembali1: TMenuItem;
     procedure Kembali1Click(Sender: TObject);
     procedure FormAnggota1Click(Sender: TObject);
+    procedure FormPegawai1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,7 +33,7 @@ var
 implementation
 
 uses
-  Login, Anggota;
+  Login, Anggota, Pegawai;
 
 {$R *.dfm}
 
@@ -44,6 +45,11 @@ end;
 procedure TFormMenu.FormAnggota1Click(Sender: TObject);
 begin
 FormAnggota.ShowModal;
+end;
+
+procedure TFormMenu.FormPegawai1Click(Sender: TObject);
+begin
+FormPegawai.ShowModal;
 end;
 
 end.

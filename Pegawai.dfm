@@ -1,9 +1,9 @@
-object FormAnggota: TFormAnggota
-  Left = 371
-  Top = 197
-  Width = 550
-  Height = 441
-  Caption = 'Form Anggota'
+object FormPegawai: TFormPegawai
+  Left = 333
+  Top = 152
+  Width = 562
+  Height = 450
+  Caption = 'Form Pegawai'
   Color = 16744448
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,47 +14,54 @@ object FormAnggota: TFormAnggota
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object lbl1: TLabel
+  object TLabel
     Left = 16
     Top = 200
-    Width = 27
+    Width = 14
     Height = 13
-    Caption = 'Nama'
+    Caption = 'Nik'
   end
   object lbl2: TLabel
     Left = 12
     Top = 232
-    Width = 50
+    Width = 27
     Height = 13
-    Caption = 'Tgl_masuk'
+    Caption = 'Nama'
   end
   object lbl3: TLabel
     Left = 12
     Top = 260
-    Width = 65
+    Width = 62
     Height = 13
-    Caption = 'Jenis_kelamin'
+    Caption = 'Tempat_lahir'
   end
   object lbl4: TLabel
     Left = 280
     Top = 200
-    Width = 55
+    Width = 65
     Height = 13
-    Caption = 'No_telepon'
+    Caption = 'Jenis_kelamin'
   end
   object lbl5: TLabel
     Left = 276
     Top = 232
-    Width = 24
+    Width = 55
     Height = 13
-    Caption = 'Email'
+    Caption = 'No_telepon'
   end
   object lbl6: TLabel
     Left = 276
     Top = 260
-    Width = 31
+    Width = 33
     Height = 13
-    Caption = 'Status'
+    Caption = 'Alamat'
+  end
+  object lbl1: TLabel
+    Left = 12
+    Top = 292
+    Width = 64
+    Height = 13
+    Caption = 'Tanggal_lahir'
   end
   object dg1: TDBGrid
     Left = 0
@@ -72,47 +79,49 @@ object FormAnggota: TFormAnggota
     Columns = <
       item
         Expanded = False
-        FieldName = 'id_anggota'
-        Width = 55
+        FieldName = 'id_pegawai'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nik'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'nama'
-        Width = 94
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'tgl_masuk'
+        FieldName = 'tempat_lahir'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'jenis_kelamin'
+        FieldName = 'tanggal_lahir'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'jk'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'no_telepon'
-        Width = 81
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'email'
-        Width = 73
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'status'
+        FieldName = 'alamat'
         Visible = True
       end>
   end
   object btn1: TButton
     Left = 12
-    Top = 300
+    Top = 332
     Width = 75
     Height = 25
     Caption = 'Baru'
@@ -121,7 +130,7 @@ object FormAnggota: TFormAnggota
   end
   object btn2: TButton
     Left = 108
-    Top = 300
+    Top = 332
     Width = 75
     Height = 25
     Caption = 'Simpan'
@@ -130,7 +139,7 @@ object FormAnggota: TFormAnggota
   end
   object btn3: TButton
     Left = 204
-    Top = 300
+    Top = 332
     Width = 75
     Height = 25
     Caption = 'Edit'
@@ -139,7 +148,7 @@ object FormAnggota: TFormAnggota
   end
   object btn4: TButton
     Left = 308
-    Top = 300
+    Top = 332
     Width = 75
     Height = 25
     Caption = 'Hapus'
@@ -148,7 +157,7 @@ object FormAnggota: TFormAnggota
   end
   object btn5: TButton
     Left = 408
-    Top = 300
+    Top = 332
     Width = 75
     Height = 25
     Caption = 'Batal'
@@ -157,10 +166,10 @@ object FormAnggota: TFormAnggota
   end
   object btn6: TButton
     Left = 160
-    Top = 352
+    Top = 368
     Width = 75
     Height = 25
-    Caption = 'Form Anggota'
+    Caption = 'Laporan'
     TabOrder = 6
     OnClick = btn6Click
   end
@@ -171,55 +180,62 @@ object FormAnggota: TFormAnggota
     Height = 21
     TabOrder = 7
   end
-  object edt3: TEdit
+  object edt4: TEdit
     Left = 376
     Top = 220
     Width = 145
     Height = 21
     TabOrder = 8
   end
-  object edt4: TEdit
+  object edt5: TEdit
     Left = 376
-    Top = 248
+    Top = 256
     Width = 145
     Height = 21
     TabOrder = 9
   end
-  object edt2: TEdit
+  object c1: TComboBox
     Left = 376
     Top = 192
     Width = 145
     Height = 21
-    TabOrder = 10
-  end
-  object c1: TComboBox
-    Left = 112
-    Top = 256
-    Width = 145
-    Height = 21
     ItemHeight = 13
-    TabOrder = 11
+    TabOrder = 10
     Items.Strings = (
       'Laki-laki'
       'Perempuan')
   end
   object dtp1: TDateTimePicker
     Left = 112
-    Top = 224
+    Top = 296
     Width = 145
     Height = 21
     Date = 45262.674647337960000000
     Time = 45262.674647337960000000
-    TabOrder = 12
+    TabOrder = 11
   end
   object b1: TButton
     Left = 344
-    Top = 352
+    Top = 368
     Width = 75
     Height = 25
     Caption = 'Kembali'
-    TabOrder = 13
+    TabOrder = 12
     OnClick = b1Click
+  end
+  object edt2: TEdit
+    Left = 112
+    Top = 224
+    Width = 145
+    Height = 21
+    TabOrder = 13
+  end
+  object edt3: TEdit
+    Left = 112
+    Top = 256
+    Width = 145
+    Height = 21
+    TabOrder = 14
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -242,7 +258,7 @@ object FormAnggota: TFormAnggota
     Left = 184
     Top = 12
   end
-  object frxanggota: TfrxReport
+  object frxpegawai: TfrxReport
     Version = '4.12.6'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
@@ -257,7 +273,7 @@ object FormAnggota: TFormAnggota
       'begin'
       ''
       'end.')
-    Left = 220
+    Left = 228
     Top = 12
     Datasets = <
       item
@@ -478,8 +494,9 @@ object FormAnggota: TFormAnggota
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
-      'select * from anggota')
+      'select * from pegawai')
     Params = <>
     Left = 140
     Top = 12

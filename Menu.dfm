@@ -7949,6 +7949,7 @@ object FormMenu: TFormMenu
       end
       object FormPegawai1: TMenuItem
         Caption = 'FormPegawai'
+        OnClick = FormPegawai1Click
       end
       object FormBuku1: TMenuItem
         Caption = 'FormBuku'
