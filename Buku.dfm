@@ -1,8 +1,8 @@
 object FormBuku: TFormBuku
-  Left = 260
-  Top = 220
-  Width = 629
-  Height = 419
+  Left = 485
+  Top = 194
+  Width = 652
+  Height = 456
   Caption = 'Form Buku'
   Color = 16744448
   Font.Charset = DEFAULT_CHARSET
@@ -11,111 +11,64 @@ object FormBuku: TFormBuku
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object TLabel
     Left = 16
     Top = 200
-    Width = 14
+    Width = 50
     Height = 13
-    Caption = 'Nik'
+    Caption = 'Kode Buku'
   end
   object lbl2: TLabel
     Left = 12
     Top = 232
-    Width = 27
+    Width = 51
     Height = 13
-    Caption = 'Nama'
+    Caption = 'Judul Buku'
   end
   object lbl3: TLabel
     Left = 12
     Top = 260
-    Width = 62
+    Width = 52
     Height = 13
-    Caption = 'Tempat_lahir'
+    Caption = 'Pengarang'
   end
   object lbl4: TLabel
     Left = 280
     Top = 200
-    Width = 65
+    Width = 61
     Height = 13
-    Caption = 'Jenis_kelamin'
+    Caption = 'Tahun Terbit'
   end
   object lbl5: TLabel
     Left = 276
     Top = 232
-    Width = 55
+    Width = 31
     Height = 13
-    Caption = 'No_telepon'
+    Caption = 'Id_rak'
   end
   object lbl6: TLabel
     Left = 276
     Top = 260
-    Width = 33
+    Width = 66
     Height = 13
-    Caption = 'Alamat'
+    Caption = 'Kategori Buku'
   end
   object lbl1: TLabel
     Left = 12
     Top = 292
-    Width = 64
+    Width = 40
     Height = 13
-    Caption = 'Tanggal_lahir'
+    Caption = 'Penerbit'
   end
-  object dg1: TDBGrid
-    Left = 0
-    Top = 60
-    Width = 537
-    Height = 120
-    DataSource = ds1
-    TabOrder = 0
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'id_pegawai'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'nik'
-        Width = 100
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'nama'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'tempat_lahir'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'tanggal_lahir'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'jk'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'no_telepon'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'alamat'
-        Visible = True
-      end>
+  object lbl7: TLabel
+    Left = 276
+    Top = 292
+    Width = 59
+    Height = 13
+    Caption = 'Jumlah Buku'
   end
   object btn1: TButton
     Left = 12
@@ -123,7 +76,8 @@ object FormBuku: TFormBuku
     Width = 75
     Height = 25
     Caption = 'Baru'
-    TabOrder = 1
+    TabOrder = 0
+    OnClick = btn1Click
   end
   object btn2: TButton
     Left = 108
@@ -131,7 +85,8 @@ object FormBuku: TFormBuku
     Width = 75
     Height = 25
     Caption = 'Simpan'
-    TabOrder = 2
+    TabOrder = 1
+    OnClick = btn2Click
   end
   object btn3: TButton
     Left = 204
@@ -139,7 +94,8 @@ object FormBuku: TFormBuku
     Width = 75
     Height = 25
     Caption = 'Edit'
-    TabOrder = 3
+    TabOrder = 2
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 308
@@ -147,7 +103,8 @@ object FormBuku: TFormBuku
     Width = 75
     Height = 25
     Caption = 'Hapus'
-    TabOrder = 4
+    TabOrder = 3
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 408
@@ -155,78 +112,97 @@ object FormBuku: TFormBuku
     Width = 75
     Height = 25
     Caption = 'Batal'
-    TabOrder = 5
+    TabOrder = 4
+    OnClick = btn5Click
   end
   object btn6: TButton
     Left = 160
-    Top = 355
+    Top = 371
     Width = 75
     Height = 25
     Caption = 'Laporan'
-    TabOrder = 6
+    TabOrder = 5
+    OnClick = btn6Click
   end
   object edt1: TEdit
     Left = 112
     Top = 192
     Width = 145
     Height = 21
-    TabOrder = 7
-  end
-  object edt4: TEdit
-    Left = 376
-    Top = 220
-    Width = 145
-    Height = 21
-    TabOrder = 8
+    TabOrder = 6
   end
   object edt5: TEdit
+    Left = 376
+    Top = 196
+    Width = 145
+    Height = 21
+    TabOrder = 7
+  end
+  object edt6: TEdit
     Left = 376
     Top = 256
     Width = 145
     Height = 21
-    TabOrder = 9
+    TabOrder = 8
   end
   object c1: TComboBox
     Left = 376
-    Top = 192
+    Top = 224
     Width = 145
     Height = 21
     ItemHeight = 13
-    TabOrder = 10
-    Items.Strings = (
-      'Laki-laki'
-      'Perempuan')
-  end
-  object dtp1: TDateTimePicker
-    Left = 112
-    Top = 296
-    Width = 145
-    Height = 21
-    Date = 45262.674647337960000000
-    Time = 45262.674647337960000000
-    TabOrder = 11
+    TabOrder = 9
   end
   object b1: TButton
-    Left = 344
-    Top = 355
+    Left = 360
+    Top = 384
     Width = 75
-    Height = 25
+    Height = 20
     Caption = 'Kembali'
-    TabOrder = 12
+    TabOrder = 10
+    OnClick = b1Click
   end
   object edt2: TEdit
     Left = 112
     Top = 224
     Width = 145
     Height = 21
-    TabOrder = 13
+    TabOrder = 11
   end
   object edt3: TEdit
     Left = 112
     Top = 256
     Width = 145
     Height = 21
+    TabOrder = 12
+  end
+  object dg1: TDBGrid
+    Left = 8
+    Top = 64
+    Width = 593
+    Height = 120
+    DataSource = ds1
+    TabOrder = 13
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = dg1CellClick
+  end
+  object edt4: TEdit
+    Left = 112
+    Top = 296
+    Width = 145
+    Height = 21
     TabOrder = 14
+  end
+  object edt7: TEdit
+    Left = 376
+    Top = 296
+    Width = 145
+    Height = 21
+    TabOrder = 15
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -249,7 +225,7 @@ object FormBuku: TFormBuku
     Left = 184
     Top = 12
   end
-  object frxpegawai: TfrxReport
+  object frxbuku: TfrxReport
     Version = '4.12.6'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
@@ -487,7 +463,7 @@ object FormBuku: TFormBuku
     Connection = con1
     Active = True
     SQL.Strings = (
-      'select * from pegawai')
+      'select * from buku')
     Params = <>
     Left = 140
     Top = 12
@@ -499,5 +475,14 @@ object FormBuku: TFormBuku
     BCDToCurrency = False
     Left = 324
     Top = 12
+  end
+  object zqry2: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from rak')
+    Params = <>
+    Left = 448
+    Top = 16
   end
 end

@@ -1,6 +1,6 @@
 object FormPeminjaman: TFormPeminjaman
-  Left = 433
-  Top = 192
+  Left = 126
+  Top = 128
   Width = 684
   Height = 507
   Caption = 'Form Peminjaman'

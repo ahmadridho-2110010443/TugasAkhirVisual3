@@ -1,9 +1,9 @@
-object FormPegawai: TFormPegawai
-  Left = 116
-  Top = 186
-  Width = 562
-  Height = 450
-  Caption = 'Form Pegawai'
+object FormPengembalian: TFormPengembalian
+  Left = 557
+  Top = 147
+  Width = 767
+  Height = 515
+  Caption = 'Form Pengembalian'
   Color = 16744448
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,62 +11,89 @@ object FormPegawai: TFormPegawai
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object TLabel
     Left = 16
-    Top = 200
-    Width = 14
+    Top = 288
+    Width = 51
     Height = 13
-    Caption = 'Nik'
+    Caption = 'Judul Buku'
   end
   object lbl2: TLabel
     Left = 12
-    Top = 232
-    Width = 27
+    Top = 328
+    Width = 52
     Height = 13
-    Caption = 'Nama'
+    Caption = 'Pengarang'
   end
   object lbl3: TLabel
     Left = 12
-    Top = 260
-    Width = 62
+    Top = 364
+    Width = 40
     Height = 13
-    Caption = 'Tempat_lahir'
+    Caption = 'Penerbit'
   end
   object lbl4: TLabel
-    Left = 280
-    Top = 200
-    Width = 65
+    Left = 16
+    Top = 248
+    Width = 36
     Height = 13
-    Caption = 'Jenis_kelamin'
+    Caption = 'Id Buku'
   end
   object lbl5: TLabel
-    Left = 276
-    Top = 232
-    Width = 55
+    Left = 268
+    Top = 264
+    Width = 102
     Height = 13
-    Caption = 'No_telepon'
+    Caption = 'Jumlah Pengembalian'
   end
   object lbl6: TLabel
-    Left = 276
-    Top = 260
-    Width = 33
+    Left = 268
+    Top = 308
+    Width = 107
     Height = 13
-    Caption = 'Alamat'
+    Caption = 'Tanggal Pengembalian'
   end
   object lbl1: TLabel
-    Left = 12
-    Top = 292
-    Width = 64
+    Left = 276
+    Top = 196
+    Width = 67
     Height = 13
-    Caption = 'Tanggal_lahir'
+    Caption = 'Jumlah Pinjam'
+  end
+  object lbl7: TLabel
+    Left = 272
+    Top = 344
+    Width = 77
+    Height = 13
+    Caption = 'Tanggal Kembali'
+  end
+  object lbl8: TLabel
+    Left = 280
+    Top = 376
+    Width = 33
+    Height = 13
+    Caption = 'Denda'
+  end
+  object lbl9: TLabel
+    Left = 16
+    Top = 208
+    Width = 70
+    Height = 13
+    Caption = 'Id Peminjaman'
+  end
+  object lbl10: TLabel
+    Left = 272
+    Top = 232
+    Width = 70
+    Height = 13
+    Caption = 'Id Peminjaman'
   end
   object dg1: TDBGrid
     Left = 0
     Top = 60
-    Width = 537
+    Width = 665
     Height = 120
     DataSource = ds1
     TabOrder = 0
@@ -75,8 +102,40 @@ object FormPegawai: TFormPegawai
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    OnCellClick = dg1CellClick
     Columns = <
+      item
+        Expanded = False
+        FieldName = 'id_peminjaman'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kode_buku'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'judul_buku'
+        Width = 150
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pengarang'
+        Width = 110
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'penerbit'
+        Width = 110
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'stok_awal'
+        Visible = True
+      end
       item
         Expanded = False
         FieldName = 'id_pegawai'
@@ -84,8 +143,7 @@ object FormPegawai: TFormPegawai
       end
       item
         Expanded = False
-        FieldName = 'nik'
-        Width = 100
+        FieldName = 'id_anggota'
         Visible = True
       end
       item
@@ -95,147 +153,151 @@ object FormPegawai: TFormPegawai
       end
       item
         Expanded = False
-        FieldName = 'tempat_lahir'
+        FieldName = 'tanggal_peminjaman'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'tanggal_lahir'
+        FieldName = 'tanggal_pengembalian'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'jk'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'no_telepon'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'alamat'
+        FieldName = 'jumlah_pinjam'
         Visible = True
       end>
   end
   object btn1: TButton
-    Left = 12
-    Top = 332
+    Left = 20
+    Top = 408
     Width = 75
     Height = 25
     Caption = 'Baru'
     TabOrder = 1
-    OnClick = btn1Click
   end
   object btn2: TButton
-    Left = 108
-    Top = 332
+    Left = 116
+    Top = 408
     Width = 75
     Height = 25
     Caption = 'Simpan'
     TabOrder = 2
-    OnClick = btn2Click
   end
   object btn3: TButton
-    Left = 204
-    Top = 332
+    Left = 220
+    Top = 408
     Width = 75
     Height = 25
     Caption = 'Edit'
     TabOrder = 3
-    OnClick = btn3Click
   end
   object btn4: TButton
-    Left = 308
-    Top = 332
+    Left = 324
+    Top = 408
     Width = 75
     Height = 25
     Caption = 'Hapus'
     TabOrder = 4
-    OnClick = btn4Click
-  end
-  object btn5: TButton
-    Left = 408
-    Top = 332
-    Width = 75
-    Height = 25
-    Caption = 'Batal'
-    TabOrder = 5
-    OnClick = btn5Click
   end
   object btn6: TButton
-    Left = 160
-    Top = 368
+    Left = 128
+    Top = 448
     Width = 75
     Height = 25
     Caption = 'Laporan'
-    TabOrder = 6
-    OnClick = btn6Click
+    TabOrder = 5
   end
   object edt1: TEdit
     Left = 112
-    Top = 192
+    Top = 288
+    Width = 145
+    Height = 21
+    TabOrder = 6
+  end
+  object edt4: TEdit
+    Left = 408
+    Top = 196
     Width = 145
     Height = 21
     TabOrder = 7
   end
-  object edt4: TEdit
-    Left = 376
-    Top = 220
+  object edt5: TEdit
+    Left = 408
+    Top = 264
     Width = 145
     Height = 21
     TabOrder = 8
   end
-  object edt5: TEdit
-    Left = 376
-    Top = 256
-    Width = 145
-    Height = 21
-    TabOrder = 9
-  end
   object c1: TComboBox
-    Left = 376
-    Top = 192
+    Left = 112
+    Top = 248
     Width = 145
     Height = 21
     ItemHeight = 13
-    TabOrder = 10
-    Items.Strings = (
-      'Laki-laki'
-      'Perempuan')
-  end
-  object dtp1: TDateTimePicker
-    Left = 112
-    Top = 296
-    Width = 145
-    Height = 21
-    Date = 45262.674647337960000000
-    Time = 45262.674647337960000000
-    TabOrder = 11
+    TabOrder = 9
   end
   object b1: TButton
-    Left = 344
-    Top = 368
+    Left = 280
+    Top = 448
     Width = 75
     Height = 25
     Caption = 'Kembali'
-    TabOrder = 12
-    OnClick = b1Click
+    TabOrder = 10
   end
   object edt2: TEdit
     Left = 112
-    Top = 224
+    Top = 328
+    Width = 145
+    Height = 21
+    TabOrder = 11
+  end
+  object edt3: TEdit
+    Left = 112
+    Top = 368
+    Width = 145
+    Height = 21
+    TabOrder = 12
+  end
+  object edt6: TEdit
+    Left = 408
+    Top = 372
     Width = 145
     Height = 21
     TabOrder = 13
   end
-  object edt3: TEdit
+  object dtp1: TDateTimePicker
+    Left = 408
+    Top = 296
+    Width = 186
+    Height = 21
+    Date = 45262.915443900460000000
+    Time = 45262.915443900460000000
+    TabOrder = 14
+  end
+  object dtp2: TDateTimePicker
+    Left = 408
+    Top = 336
+    Width = 186
+    Height = 21
+    Date = 45262.915443900460000000
+    Time = 45262.915443900460000000
+    TabOrder = 15
+  end
+  object c2: TComboBox
     Left = 112
-    Top = 256
+    Top = 208
     Width = 145
     Height = 21
-    TabOrder = 14
+    ItemHeight = 13
+    TabOrder = 16
+  end
+  object c3: TComboBox
+    Left = 408
+    Top = 232
+    Width = 145
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 17
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -258,7 +320,7 @@ object FormPegawai: TFormPegawai
     Left = 184
     Top = 12
   end
-  object frxpegawai: TfrxReport
+  object frxpeminjaman: TfrxReport
     Version = '4.12.6'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
@@ -273,7 +335,7 @@ object FormPegawai: TFormPegawai
       'begin'
       ''
       'end.')
-    Left = 228
+    Left = 236
     Top = 12
     Datasets = <
       item
@@ -494,9 +556,8 @@ object FormPegawai: TFormPegawai
   end
   object zqry1: TZQuery
     Connection = con1
-    Active = True
     SQL.Strings = (
-      'select * from pegawai')
+      'select * from peminjaman')
     Params = <>
     Left = 140
     Top = 12
@@ -508,5 +569,32 @@ object FormPegawai: TFormPegawai
     BCDToCurrency = False
     Left = 324
     Top = 12
+  end
+  object zqry2: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from peminjaman')
+    Params = <>
+    Left = 408
+    Top = 16
+  end
+  object zqry3: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from buku')
+    Params = <>
+    Left = 480
+    Top = 16
+  end
+  object zqry4: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from anggota')
+    Params = <>
+    Left = 552
+    Top = 16
   end
 end

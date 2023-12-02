@@ -9,7 +9,8 @@ uses
   Peminjaman in 'Peminjaman.pas' {FormPeminjaman},
   Register in 'Register.pas' {FormRegister},
   Rak in 'Rak.pas' {FormRak},
-  Buku in 'Buku.pas' {FormBuku};
+  Buku in 'Buku.pas' {FormBuku},
+  Pengembalian in 'Pengembalian.pas' {FormPengembalian};
 
 {$R *.res}
 
@@ -23,5 +24,6 @@ begin
   Application.CreateForm(TFormRegister, FormRegister);
   Application.CreateForm(TFormRak, FormRak);
   Application.CreateForm(TFormBuku, FormBuku);
+  Application.CreateForm(TFormPengembalian, FormPengembalian);
   Application.Run;
 end.

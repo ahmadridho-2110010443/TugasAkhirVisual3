@@ -7953,6 +7953,7 @@ object FormMenu: TFormMenu
       end
       object FormBuku1: TMenuItem
         Caption = 'FormBuku'
+        OnClick = FormBuku1Click
       end
       object FormPeminjaman1: TMenuItem
         Caption = 'FormPeminjaman'
