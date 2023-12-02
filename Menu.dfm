@@ -7963,6 +7963,7 @@ object FormMenu: TFormMenu
       end
       object FormRak1: TMenuItem
         Caption = 'FormRak'
+        OnClick = FormRak1Click
       end
     end
     object Kembali1: TMenuItem

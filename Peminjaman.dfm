@@ -1,6 +1,6 @@
 object FormPeminjaman: TFormPeminjaman
-  Left = 340
-  Top = 168
+  Left = 433
+  Top = 192
   Width = 684
   Height = 507
   Caption = 'Form Peminjaman'
@@ -590,6 +590,7 @@ object FormPeminjaman: TFormPeminjaman
   end
   object zqry2: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'select * from pegawai')
     Params = <>
@@ -598,6 +599,7 @@ object FormPeminjaman: TFormPeminjaman
   end
   object zqry3: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'select * from anggota')
     Params = <>

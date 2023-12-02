@@ -1,9 +1,9 @@
-object FormAnggota: TFormAnggota
-  Left = 106
-  Top = 153
-  Width = 550
-  Height = 441
-  Caption = 'Form Anggota'
+object FormRak: TFormRak
+  Left = 430
+  Top = 161
+  Width = 617
+  Height = 402
+  Caption = 'Form Rak'
   Color = 16744448
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,215 +11,129 @@ object FormAnggota: TFormAnggota
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
     Left = 16
-    Top = 200
-    Width = 27
-    Height = 13
-    Caption = 'Nama'
-  end
-  object lbl2: TLabel
-    Left = 12
-    Top = 232
+    Top = 208
     Width = 50
     Height = 13
-    Caption = 'Tgl_masuk'
+    Caption = 'Lokasi Rak'
   end
   object lbl3: TLabel
-    Left = 12
-    Top = 260
-    Width = 65
+    Left = 284
+    Top = 196
+    Width = 39
     Height = 13
-    Caption = 'Jenis_kelamin'
-  end
-  object lbl4: TLabel
-    Left = 280
-    Top = 200
-    Width = 55
-    Height = 13
-    Caption = 'No_telepon'
-  end
-  object lbl5: TLabel
-    Left = 276
-    Top = 232
-    Width = 24
-    Height = 13
-    Caption = 'Email'
+    Caption = 'Id_Buku'
   end
   object lbl6: TLabel
-    Left = 276
-    Top = 260
-    Width = 31
+    Left = 284
+    Top = 228
+    Width = 40
     Height = 13
-    Caption = 'Status'
+    Caption = 'Kategori'
+  end
+  object btn1: TButton
+    Left = 60
+    Top = 276
+    Width = 75
+    Height = 25
+    Caption = 'Baru'
+    TabOrder = 0
+    OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 156
+    Top = 276
+    Width = 75
+    Height = 25
+    Caption = 'Simpan'
+    TabOrder = 1
+    OnClick = btn2Click
+  end
+  object btn3: TButton
+    Left = 252
+    Top = 276
+    Width = 75
+    Height = 25
+    Caption = 'Edit'
+    TabOrder = 2
+    OnClick = btn3Click
+  end
+  object btn4: TButton
+    Left = 356
+    Top = 276
+    Width = 75
+    Height = 25
+    Caption = 'Hapus'
+    TabOrder = 3
+    OnClick = btn4Click
+  end
+  object btn5: TButton
+    Left = 456
+    Top = 276
+    Width = 75
+    Height = 25
+    Caption = 'Batal'
+    TabOrder = 4
+    OnClick = btn5Click
+  end
+  object btn6: TButton
+    Left = 120
+    Top = 313
+    Width = 75
+    Height = 25
+    Caption = 'Laporan'
+    TabOrder = 5
+    OnClick = btn6Click
+  end
+  object edt1: TEdit
+    Left = 112
+    Top = 200
+    Width = 145
+    Height = 21
+    TabOrder = 6
+  end
+  object edt2: TEdit
+    Left = 368
+    Top = 224
+    Width = 145
+    Height = 21
+    TabOrder = 7
+  end
+  object c1: TComboBox
+    Left = 368
+    Top = 192
+    Width = 145
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 8
+  end
+  object b1: TButton
+    Left = 392
+    Top = 313
+    Width = 75
+    Height = 25
+    Caption = 'Kembali'
+    TabOrder = 9
+    OnClick = b1Click
   end
   object dg1: TDBGrid
-    Left = 0
-    Top = 60
-    Width = 537
+    Left = 136
+    Top = 64
+    Width = 361
     Height = 120
     DataSource = ds1
-    TabOrder = 0
+    TabOrder = 10
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnCellClick = dg1CellClick
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'id_anggota'
-        Width = 55
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'nama'
-        Width = 94
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'tgl_masuk'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'jenis_kelamin'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'no_telepon'
-        Width = 81
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'email'
-        Width = 73
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'status'
-        Visible = True
-      end>
-  end
-  object btn1: TButton
-    Left = 12
-    Top = 300
-    Width = 75
-    Height = 25
-    Caption = 'Baru'
-    TabOrder = 1
-    OnClick = btn1Click
-  end
-  object btn2: TButton
-    Left = 108
-    Top = 300
-    Width = 75
-    Height = 25
-    Caption = 'Simpan'
-    TabOrder = 2
-    OnClick = btn2Click
-  end
-  object btn3: TButton
-    Left = 204
-    Top = 300
-    Width = 75
-    Height = 25
-    Caption = 'Edit'
-    TabOrder = 3
-    OnClick = btn3Click
-  end
-  object btn4: TButton
-    Left = 308
-    Top = 300
-    Width = 75
-    Height = 25
-    Caption = 'Hapus'
-    TabOrder = 4
-    OnClick = btn4Click
-  end
-  object btn5: TButton
-    Left = 408
-    Top = 300
-    Width = 75
-    Height = 25
-    Caption = 'Batal'
-    TabOrder = 5
-    OnClick = btn5Click
-  end
-  object btn6: TButton
-    Left = 160
-    Top = 352
-    Width = 75
-    Height = 25
-    Caption = 'Laporan'
-    TabOrder = 6
-    OnClick = btn6Click
-  end
-  object edt1: TEdit
-    Left = 112
-    Top = 192
-    Width = 145
-    Height = 21
-    TabOrder = 7
-  end
-  object edt3: TEdit
-    Left = 376
-    Top = 220
-    Width = 145
-    Height = 21
-    TabOrder = 8
-  end
-  object edt4: TEdit
-    Left = 376
-    Top = 248
-    Width = 145
-    Height = 21
-    TabOrder = 9
-  end
-  object edt2: TEdit
-    Left = 376
-    Top = 192
-    Width = 145
-    Height = 21
-    TabOrder = 10
-  end
-  object c1: TComboBox
-    Left = 112
-    Top = 256
-    Width = 145
-    Height = 21
-    ItemHeight = 13
-    TabOrder = 11
-    Items.Strings = (
-      'Laki-laki'
-      'Perempuan')
-  end
-  object dtp1: TDateTimePicker
-    Left = 112
-    Top = 224
-    Width = 145
-    Height = 21
-    Date = 45262.674647337960000000
-    Time = 45262.674647337960000000
-    TabOrder = 12
-  end
-  object b1: TButton
-    Left = 344
-    Top = 352
-    Width = 75
-    Height = 25
-    Caption = 'Kembali'
-    TabOrder = 13
-    OnClick = b1Click
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -242,7 +156,7 @@ object FormAnggota: TFormAnggota
     Left = 184
     Top = 12
   end
-  object frxanggota: TfrxReport
+  object frxrak: TfrxReport
     Version = '4.12.6'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
@@ -484,8 +398,9 @@ object FormAnggota: TFormAnggota
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
-      'select * from anggota')
+      'select * from rak')
     Params = <>
     Left = 140
     Top = 12
@@ -497,5 +412,14 @@ object FormAnggota: TFormAnggota
     BCDToCurrency = False
     Left = 324
     Top = 12
+  end
+  object zqry2: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from buku')
+    Params = <>
+    Left = 448
+    Top = 16
   end
 end

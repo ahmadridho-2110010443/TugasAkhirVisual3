@@ -135,7 +135,7 @@ begin
 id:=dg1.DataSource.DataSet.FieldByName('id_peminjaman').AsString;
 ShowMessage('DATA BERHASIL DIUPDATE!'); //UPDATE
 zqry1.SQL.Clear;
-zqry1.SQL.Add('Update peminjaman set kode_buku="'+edt1.Text+'",judul_buku="'+edt2.Text+'",pengarang="'+edt3.Text+'",penerbit="'+edt4.Text+'",stok_awak="'+edt5.Text+'",id_pegawai="'+c1.Text+'",id_anggota="'+c2.Text+'",nama="'+edt6.Text+'",tanggal_peminjaman= "'+FormatDateTime('yyyy-mm-dd',dtp1.Date)+'",tanggal_pengembalian= "'+FormatDateTime('yyyy-mm-dd',dtp2.Date)+'",jumlah_pinjam="'+edt7.Text+'" where id_peminjaman="'+id+'"');
+zqry1.SQL.Add('Update peminjaman set kode_buku="'+edt1.Text+'",judul_buku="'+edt2.Text+'",pengarang="'+edt3.Text+'",penerbit="'+edt4.Text+'",stok_awal="'+edt5.Text+'",id_pegawai="'+c1.Text+'",id_anggota="'+c2.Text+'",nama="'+edt6.Text+'",tanggal_peminjaman= "'+FormatDateTime('yyyy-mm-dd',dtp1.Date)+'",tanggal_pengembalian= "'+FormatDateTime('yyyy-mm-dd',dtp2.Date)+'",jumlah_pinjam="'+edt7.Text+'" where id_peminjaman="'+id+'"');
 zqry1.ExecSQL;
 
 zqry1.SQL.Clear;
@@ -213,8 +213,8 @@ edt5.Text:= zqry1.FieldList[5].AsString;
 c1.Text:= zqry1.FieldList[6].AsString;
 c2.Text:= zqry1.FieldList[7].AsString;
 edt6.Text:= zqry1.FieldList[8].AsString;
-dtp1.Date:=FormPegawai.zqry1.Fields[9].AsDateTime;
-dtp2.Date:=FormPegawai.zqry1.Fields[10].AsDateTime;
+dtp1.Date:=FormPeminjaman.zqry1.Fields[9].AsDateTime;
+dtp2.Date:=FormPeminjaman.zqry1.Fields[10].AsDateTime;
 edt7.Text:= zqry1.FieldList[11].AsString;
 end;
 
