@@ -1,6 +1,6 @@
 object FormLogin: TFormLogin
-  Left = 510
-  Top = 161
+  Left = 218
+  Top = 189
   Width = 403
   Height = 449
   Caption = 'Form User'
@@ -6834,6 +6834,7 @@ object FormLogin: TFormLogin
     Height = 25
     Caption = 'Register'
     TabOrder = 4
+    OnClick = b1Click
   end
   object b2: TButton
     Left = 256

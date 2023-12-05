@@ -16,6 +16,7 @@ uses
 
 begin
   Application.Initialize;
+  Application.CreateForm(TFormBuku, FormBuku);
   Application.CreateForm(TFormLogin, FormLogin);
   Application.CreateForm(TFormMenu, FormMenu);
   Application.CreateForm(TFormAnggota, FormAnggota);
@@ -23,7 +24,6 @@ begin
   Application.CreateForm(TFormPeminjaman, FormPeminjaman);
   Application.CreateForm(TFormRegister, FormRegister);
   Application.CreateForm(TFormRak, FormRak);
-  Application.CreateForm(TFormBuku, FormBuku);
   Application.CreateForm(TFormPengembalian, FormPengembalian);
   Application.Run;
 end.

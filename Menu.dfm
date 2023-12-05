@@ -7961,6 +7961,7 @@ object FormMenu: TFormMenu
       end
       object FormPengembalian1: TMenuItem
         Caption = 'FormPengembalian'
+        OnClick = FormPengembalian1Click
       end
       object FormRak1: TMenuItem
         Caption = 'FormRak'

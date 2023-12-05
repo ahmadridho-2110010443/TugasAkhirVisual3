@@ -26,6 +26,7 @@ type
     procedure btn1Click(Sender: TObject);
     procedure chk1Click(Sender: TObject);
     procedure b2Click(Sender: TObject);
+    procedure b1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,7 +42,7 @@ var
 implementation
 
 uses
-  Menu;
+  Menu, Register;
 
 {$R *.dfm}
 
@@ -90,6 +91,11 @@ end;
 procedure TFormLogin.b2Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure TFormLogin.b1Click(Sender: TObject);
+begin
+FormRegister.ShowModal;
 end;
 
 end.

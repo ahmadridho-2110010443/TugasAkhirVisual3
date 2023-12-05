@@ -1,6 +1,6 @@
 object FormPengembalian: TFormPengembalian
-  Left = 557
-  Top = 147
+  Left = 396
+  Top = 149
   Width = 767
   Height = 515
   Caption = 'Form Pengembalian'
@@ -72,7 +72,7 @@ object FormPengembalian: TFormPengembalian
   object lbl8: TLabel
     Left = 280
     Top = 376
-    Width = 33
+    Width = 31
     Height = 13
     Caption = 'Denda'
   end
