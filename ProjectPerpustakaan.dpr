@@ -16,11 +16,11 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TFormBuku, FormBuku);
   Application.CreateForm(TFormLogin, FormLogin);
+  Application.CreateForm(TFormPegawai, FormPegawai);
+  Application.CreateForm(TFormBuku, FormBuku);
   Application.CreateForm(TFormMenu, FormMenu);
   Application.CreateForm(TFormAnggota, FormAnggota);
-  Application.CreateForm(TFormPegawai, FormPegawai);
   Application.CreateForm(TFormPeminjaman, FormPeminjaman);
   Application.CreateForm(TFormRegister, FormRegister);
   Application.CreateForm(TFormRak, FormRak);
